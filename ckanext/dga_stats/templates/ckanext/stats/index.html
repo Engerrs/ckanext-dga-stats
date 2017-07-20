@@ -36,7 +36,10 @@
         {% endif %}
     </section>
     <section id="stats-recent-datasets" class="module-content tab-content">
-        <h2>{{ _('Recent Datasets') }}</h2>
+        <h2>{{ _('Recent Datasets') }}
+            {% link_for _('Download as CSV'), controller='ckanext.dga_stats.controller:StatsController',
+                action='download_stats_csv', tab='stats-recent-datasets', class_='btn btn-primary', icon='plus-sign-alt' %}
+        </h2>
         {% if c.recent_datasets %}
         <table class="table table-chunky table-bordered table-striped">
             <thead>
@@ -63,7 +66,10 @@
         {% endif %}
     </section>
     <section id="stats-user-access-list" class="module-content tab-content">
-        <h2>{{ _('User Access List') }}</h2>
+        <h2>{{ _('User Access List') }}
+            {% link_for _('Download as CSV'), controller='ckanext.dga_stats.controller:StatsController',
+                action='download_stats_csv', tab='stats-user-access-list', class_='btn btn-primary', icon='plus-sign-alt' %}
+        </h2>
         {% if c.user_access_list %}
         {% for year in h.date_range() %}
         <h3>{{ year }}</h3>
@@ -107,7 +113,10 @@
     </section>
     {% endif %}
     <section id="stats-total-datasets" class="module-content tab-content active">
-        <h2>{{ _('Total number of Datasets') }}</h2>
+        <h2>{{ _('Total number of Datasets') }}
+            {% link_for _('Download as CSV'), controller='ckanext.dga_stats.controller:StatsController',
+                action='download_stats_csv', tab='stats-total-datasets', class_='btn btn-primary', icon='plus-sign-alt' %}
+        </h2>
 
         {% set xaxis = {'mode': 'time', 'timeformat': '%y-%b'} %}
         {% set yaxis = {'min': 0} %}
@@ -134,7 +143,10 @@
     </section>
 
     <section id="stats-dataset-revisions" class="module-content tab-content">
-        <h2>{{ _('Dataset Revisions per Week') }}</h2>
+        <h2>{{ _('Dataset Revisions per Week') }}
+            {% link_for _('Download as CSV'), controller='ckanext.dga_stats.controller:StatsController',
+                action='download_stats_csv', tab='stats-dataset-revisions', class_='btn btn-primary', icon='plus-sign-alt' %}
+        </h2>
 
         {% set xaxis = {'mode': 'time', 'timeformat': '%y-%b'} %}
         {% set lines = {'fill': 1} %}
@@ -164,7 +176,10 @@
 
 
     <section id="stats-most-edited" class="module-content tab-content">
-        <h2>{{ _('Most Edited Datasets') }}</h2>
+        <h2>{{ _('Most Edited Datasets') }}
+            {% link_for _('Download as CSV'), controller='ckanext.dga_stats.controller:StatsController',
+                action='download_stats_csv', tab='stats-most-edited', class_='btn btn-primary', icon='plus-sign-alt' %}
+        </h2>
         {% if c.most_edited_packages %}
         <table class="table table-chunky table-bordered table-striped">
             <thead>
@@ -215,7 +230,10 @@
         {% endif %}
     </section>
     <section id="stats-by-org" class="module-content tab-content">
-        <h2>{{ _('Datasets by Organization') }}</h2>
+        <h2>{{ _('Datasets by Organization') }}
+            {% link_for _('Download as CSV'), controller='ckanext.dga_stats.controller:StatsController',
+                action='download_stats_csv', tab='stats-by-org', class_='btn btn-primary', icon='plus-sign-alt' %}
+        </h2>
         {% if c.by_org %}
         <table class="table table-chunky table-bordered table-striped">
             <thead>
@@ -248,7 +266,10 @@
         {% endif %}
     </section>
     <section id="stats-res-by-org" class="module-content tab-content">
-        <h2>{{ _('Resources by Organization') }}</h2>
+        <h2>{{ _('Resources by Organization') }}
+            {% link_for _('Download as CSV'), controller='ckanext.dga_stats.controller:StatsController',
+                action='download_stats_csv', tab='stats-res-by-org', class_='btn btn-primary', icon='plus-sign-alt' %}
+        </h2>
         {% if c.res_by_org %}
         <table class="table table-chunky table-bordered table-striped">
             <thead>
@@ -279,7 +300,10 @@
         {% endif %}
     </section>
     <section id="stats-activity-org" class="module-content tab-content">
-        <h2>{{ _('Most Active Organisations') }}</h2>
+        <h2>{{ _('Most Active Organisations') }}
+            {% link_for _('Download as CSV'), controller='ckanext.dga_stats.controller:StatsController',
+                action='download_stats_csv', tab='stats-activity-org', class_='btn btn-primary', icon='plus-sign-alt' %}
+        </h2>
         {% if c.top_active_orgs %}
         <table class="table table-chunky table-bordered table-striped">
             <thead>
@@ -304,7 +328,10 @@
         {% endif %}
     </section>
     <section id="stats-summary" class="module-content tab-content">
-        <h2>{{ _('Summary') }}</h2>
+        <h2>{{ _('Summary') }}
+        {% link_for _('Download as CSV'), controller='ckanext.dga_stats.controller:StatsController',
+            action='download_stats_csv', tab='stats-summary', class_='btn btn-primary', icon='plus-sign-alt' %}
+        </h2>
         {% if c.summary_stats %}
         <table class="table table-chunky table-bordered table-striped">
             <thead>
